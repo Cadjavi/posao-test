@@ -25,7 +25,7 @@ const testFun = (staradi) => {
   switch (staradi) {
     case 0:
       CnfList.innerHTML += `<br>https://app.placements.io/tickets/#/${brojTiketa}`
-      CnfVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
+      CnfVreme.innerText = `Create new flight ukupno: ${vreme[staradi]} min`
       break
     case 1:
       CelList.innerHTML += `<br>https://app.placements.io/tickets/#/${brojTiketa}`
