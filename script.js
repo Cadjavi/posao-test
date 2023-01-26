@@ -24,19 +24,19 @@ const testFun = (staradi) => {
 
   switch (staradi) {
     case 0:
-      CnfList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      CnfList.innerHTML += `<br>https://app.placements.io/tickets/#/${brojTiketa}`
       CnfVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
       break
     case 1:
-      CelList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      CelList.innerHTML += `<br>https://app.placements.io/tickets/#/${brojTiketa}`
       CelVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
       break
     case 2:
-      CncList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      CncList.innerHTML += `<br>https://app.placements.io/tickets/#/${brojTiketa}`
       CncVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
       break
     case 3:
-      RolList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      RolList.innerHTML += `<br>https://app.placements.io/tickets/#/${brojTiketa}`
       RolVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
       break
   }
