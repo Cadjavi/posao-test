@@ -62,8 +62,6 @@ const obrisi = () => {
   ukupnoSati.innerText = ''
 }
 
-const kopiraj = () => {
-  
-}
+
 
 //https://app.placements.io/tickets/#/75500
