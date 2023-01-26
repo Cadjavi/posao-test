@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title></title>
+  </head>
+  <body>
+    <h3>Unesi broj tiketa i vreme:</h3>
+    <input type="text" id="tiketInput" class="tiketInput" />
+    <input
+      type="text"
+      id="vremeInput"
+      class="vremeInput"
+      placeholder="min"
+    /><br /><br />
+
+    <button id="CnfBtn" onclick="dodajUCtn()">Create new flight</button
+    ><br /><br />
+
+    <button id="CelBtn" onclick="dodajUCel()">Changes existing lines</button
+    ><br /><br />
+
+    <button id="CncBtn" onclick="dodajUCnc()">Cancellation</button><br /><br />
+
+    <button id="RolBtn" onclick="dodajURol()">Rollover</button><br /><br />
+
+    <h3 id="CnfVreme">Create new flight ukupno:</h3>
+    <p id="CnfList"></p>
+
+    <h3 id="CelVreme">Changes existing ukupno:</h3>
+    <p id="CelList"></p>
+
+    <h3 id="CncVreme">Cancellation ukupno:</h3>
+    <p id="CncList"></p>
+
+    <h3 id="RolVreme">Rollover ukupno:</h3>
+    <p id="RolList"></p>
+
+
+    <button onclick="obrisi()">Obrisi</button>
+
+    <h3 id="ukupnoSati">Ukupno sati: </h3>
+
+    <table>
+      <tr>
+        <th>Gender</th>
+        <th>PTV MH Only</th>
+        <th>PTV FW Only</th>
+        <th>PTV Dual</th>
+      </tr>
+      <tr>
+        <td>Both</td>
+        <td>STP PTV RON <b>A 18+ MH</b> PKG<br>STP PTV RON <b>A 18-49 MH</b> PKG<br>STP PTV RON <b>A 25-54 MH</b> PKG</td>
+        <td>STP PTV RON <b>A 18+ Guaranteed</b> & Non-Guaranteed Partners FW PKG<br>STP PTV RON <b>A 18-49 Guaranteed</b> & Non-Guaranteed Partners FW PKG<br>STP PTV RON <b>A 25-54 Guaranteed</b> & Non-Guaranteed Partners FW PKG</td>
+        <td>STP PTV RON <b>A 18+ Dual</b> Server PKG<br>STP PTV RON <b>A 18-49 Dual</b> Server PKG<br>STP PTV RON <b>A 25-54 Dual</b> Server PKG</td>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <td>STP PTV RON <b>W 18+ MH</b> PKG<br>STP PTV RON <b>W 18-49 MH</b> PKG<br>STP PTV RON <b>W 25-54 MH</b> PKG</td>
+        <td>STP PTV RON <b>W 18+ Guaranteed</b> & Non-Guaranteed Partners PKG<br>STP PTV RON <b>W 18-49 Guaranteed</b> & Non-Guaranteed Partners FW PKG<br>STP PTV RON <b>W 25-54 Guaranteed</b> & Non-Guaranteed Partners FW PKG</td>
+        <td>STP PTV RON <b>W 18+ Dual</b> Server PKG<br>STP PTV RON <b>W 18-49 Dual</b> Server PKG<br>STP PTV RON <b>W 25-54 Dual</b> Server PKG</td>
+      </tr>
+      <tr>
+        <td>Male</td>
+        <td>STP PTV RON <b>M 18+ MH</b> PKG<br>STP PTV RON <b>M 18-49 MH</b> PKG<br>STP PTV RON <b>M 25-54 MH</b> PKG</td>
+        <td>STP PTV RON <b>M 18+ Guaranteed</b> & Non-Guaranteed Partners FW PKG<br>STP PTV RON <b>M 18-49 Guaranteed</b> & Non-Guaranteed Partners FW PKG<br>STP PTV RON <b>M 25-54 Guaranteed</b> & Non-Guaranteed Partners FW PKG</td>
+        <td>STP PTV RON <b>M 18+ Dual</b> Server PKG<br>STP PTV RON <b>M 18-49 Dual</b> Server PKG<br>STP PTV RON <b>M 25-54 Dual</b> Server PKG</td>
+      </tr>
+      <tr>
+        <td></td>
+        <th>PSO MH Only</th>
+        <th>PSO FW Only</th>
+        <th>PSO Dual</th>
+      </tr>
+      <tr>
+        <td>Both</td>
+        <td>STP PSO RON <b>A 18+ MH</b> PKG<br>STP PSO RON <b>A 18-49 MH</b> PKG<br>STP PSO RON <b>A 25-54 MH</b> PKG</td>
+        <td>STP PSO RON <b>A 18+ FW</b> PKG<br>STP PSO RON <b>A 18-49 FW</b> PKG<br>STP PSO RON <b>A 25-54 FW</b> PKG</td>
+        <td>STP PSO RON <b>A 18+ Dual</b> Server PKG<br>STP PSO RON <b>A 18-49 Dual</b> Server PKG<br>STP PSO RON <b>A 25-54 Dual</b> Server PKG</td>
+      </tr>
+      <tr>
+        <td>Female</td>
+        <td>STP PSO RON <b>W 18+ MH</b> PKG<br>STP PSO RON <b>W 18-49 MH</b> PKG<br>STP PSO RON <b>W 25-54 MH</b> PKG</td>
+        <td>STP PSO RON <b>W 18+ FW</b> PKG<br>STP PSO RON <b>W 18-49 FW</b> PKG<br>STP PSO RON <b>W 25-54 FW</b> PKG</td>
+        <td>STP PSO RON <b>W 18+ Dual</b> Server PKG<br>STP PSO RON <b>W 18-49 Dual</b> Server PKG<br>STP PSO RON <b>W 25-54 Dual</b> Server PKG</td>
+      </tr>
+      <tr>
+        <td>Male</td>
+        <td>STP PSO RON <b>M 18+ MH</b> PKG<br>STP PSO RON <b>M 18-49 MH</b> PKG<br>STP PSO RON <b>M 25-54 MH</b> PKG</td>
+        <td>STP PSO RON <b>M 18+ FW</b> PKG<br>STP PSO RON <b>M 18-49 FW</b> PKG<br>STP PSO RON <b>M 25-54 FW</b> PKG</td>
+        <td>STP PSO RON <b>M 18+ Dual</b> Server PKG<br>STP PSO RON <b>M 18-49 Dual</b> Server PKG<br>STP PSO RON <b>M 25-54 Dual</b> Server PKG</td>
+      </tr>
+    </table>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

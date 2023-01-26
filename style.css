@@ -1,0 +1,52 @@
+p {
+  margin: 0;
+}
+
+.vremeInput {
+  width: 22px;
+}
+
+.tiketInput {
+  width: 100px;
+}
+
+button {
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+table {
+  position: absolute;
+  top: 0px;
+  left: 500px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
