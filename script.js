@@ -43,25 +43,23 @@ const testFun = (staradi) => {
   tiketInput.value = ''
   vremeInput.value = ''
 
-  ukupnoVreme = (vreme[0] + vreme[1] + vreme[2] + vreme[3]) / 60
-  ukupnoSati.innerText = `Ukupno sati: ${ukupnoVreme.toFixed(2)}`
+  ukupnoVremeMin = (vreme[0] + vreme[1] + vreme[2] + vreme[3])
+  ukupnoVremeSati = ukupnoVremeMin /60
+  ukupnoSati.innerText = `Ukupno sati: ${(ukupnoVremeSati.toFixed(2))} h ili ${ukupnoVremeMin} min`
 }
 
 const obrisi = () => {
   const provera = confirm(
     'Jesi li siguran da zelis da obrises odradjene tikete?'
   )
-  CnfList.innerHTML = ''
-  CelList.innerHTML = ''
-  CncList.innerHTML = ''
-  RolList.innerHTML = ''
-  CnfVreme.innerHTML = 'Create new flight ukupno:'
-  CelVreme.innerHTML = 'Changes existing ukupno:'
-  CncVreme.innerHTML = 'Cancellation ukupno:'
-  RolVreme.innerHTML = 'Rollover ukupno:'
-  ukupnoSati.innerText = ''
+  window.location.reload();
 }
 
-
+// function copyToClipboard() {
+//   const copyText = CnfList.value
+//   navigator.clipboard.writeText(copyText).then(() => {
+//     alert('Kopirano')
+//   })
+// }
 
 //https://app.placements.io/tickets/#/75500

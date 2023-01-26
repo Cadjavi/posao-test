@@ -14,40 +14,41 @@
     <title></title>
   </head>
   <body>
-    <h3>Unesi broj tiketa i vreme:</h3>
-    <input type="text" id="tiketInput" class="tiketInput" />
-    <input
-      type="text"
-      id="vremeInput"
-      class="vremeInput"
-      placeholder="min"
-    /><br /><br />
+    <div class="sve">
+      <h3>Unesi broj tiketa i vreme:</h3>
+      <input type="text" id="tiketInput" class="tiketInput" />
+      <input
+        type="text"
+        id="vremeInput"
+        class="vremeInput"
+        placeholder="min"
+      /><br /><br />
 
-    <button id="CnfBtn" onclick="testFun(0)">Create new flight</button
-    ><br /><br />
+      <button id="CnfBtn" onclick="testFun(0)">Create new flight</button
+      ><br /><br />
 
-    <button id="CelBtn" onclick="testFun(1)">Changes existing lines</button
-    ><br /><br />
+      <button id="CelBtn" onclick="testFun(1)">Changes existing lines</button
+      ><br /><br />
 
-    <button id="CncBtn" onclick="testFun(2)">Cancellation</button><br /><br />
+      <button id="CncBtn" onclick="testFun(2)">Cancellation</button><br /><br />
 
-    <button id="RolBtn" onclick="testFun(3)">Rollover</button><br /><br />
+      <button id="RolBtn" onclick="testFun(3)">Rollover</button><br /><br />
 
-    <h3 id="CnfVreme">Create new flight ukupno:</h3>
-    <p id="CnfList"></p>
+      <h3 id="CnfVreme">Create new flight ukupno:</h3>
+      <p id="CnfList"></p>
 
-    <h3 id="CelVreme">Changes existing ukupno:</h3>
-    <p id="CelList"></p>
+      <h3 id="CelVreme">Changes existing ukupno:</h3>
+      <p id="CelList"></p>
 
-    <h3 id="CncVreme">Cancellation ukupno:</h3>
-    <p id="CncList"></p>
+      <h3 id="CncVreme">Cancellation ukupno:</h3>
+      <p id="CncList"></p>
 
-    <h3 id="RolVreme">Rollover ukupno:</h3>
-    <p id="RolList"></p>
+      <h3 id="RolVreme">Rollover ukupno:</h3>
+      <p id="RolList"></p>
 
-    <h3 id="ukupnoSati">Ukupno sati:</h3>
-    <button onclick="obrisi()">Obrisi</button>
-
+      <h3 id="ukupnoSati">Ukupno sati:</h3>
+      <button onclick="obrisi()">Obrisi</button>
+    </div>
     <table>
       <tr>
         <th>Gender</th>

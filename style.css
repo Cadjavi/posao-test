@@ -18,7 +18,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px;
   border-radius: 8px;
 }
 
@@ -49,4 +49,21 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+input[type='text']:focus {
+  background-color: lightblue;
+}
+
+input {
+  border-radius: 8px;
+  text-align: center;
+}
+
+.sve {
+  background-color: rgb(228, 191, 123);
+  padding-left: 25px;
+  padding-top: 2px;
+  padding-bottom: 8px;
+  margin-right: 1600px;
 }
