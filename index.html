@@ -23,32 +23,35 @@
       placeholder="min"
     /><br /><br />
 
-    <button id="CnfBtn" onclick="dodajUCtn()">Create new flight</button
+    <button id="CnfBtn" onclick="testFun(0)">Create new flight</button
     ><br /><br />
 
-    <button id="CelBtn" onclick="dodajUCel()">Changes existing lines</button
+    <button id="CelBtn" onclick="testFun(1)">Changes existing lines</button
     ><br /><br />
 
-    <button id="CncBtn" onclick="dodajUCnc()">Cancellation</button><br /><br />
+    <button id="CncBtn" onclick="testFun(2)">Cancellation</button><br /><br />
 
-    <button id="RolBtn" onclick="dodajURol()">Rollover</button><br /><br />
+    <button id="RolBtn" onclick="testFun(3)">Rollover</button><br /><br />
 
     <h3 id="CnfVreme">Create new flight ukupno:</h3>
     <p id="CnfList"></p>
+    <button id="kopiraj">Kopiraj</button>
 
     <h3 id="CelVreme">Changes existing ukupno:</h3>
     <p id="CelList"></p>
+    <button id="kopiraj">Kopiraj</button>
 
     <h3 id="CncVreme">Cancellation ukupno:</h3>
     <p id="CncList"></p>
+    <button id="kopiraj">Kopiraj</button>
 
     <h3 id="RolVreme">Rollover ukupno:</h3>
     <p id="RolList"></p>
+    <button id="kopiraj">Kopiraj</button>
 
-
-    <button onclick="obrisi()">Obrisi</button>
 
     <h3 id="ukupnoSati">Ukupno sati: </h3>
+    <button onclick="obrisi()">Obrisi</button>
 
     <table>
       <tr>

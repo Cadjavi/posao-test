@@ -11,64 +11,46 @@ const CelList = document.getElementById('CelList')
 const CncList = document.getElementById('CncList')
 const RolList = document.getElementById('RolList')
 
-let ukupnoSati = document.getElementById("ukupnoSati")
+let ukupnoSati = document.getElementById('ukupnoSati')
 
-let vreme1 = 0
-let vreme2 = 0
-let vreme3 = 0
-let vreme4 = 0
+let vreme = [0, 0, 0, 0]
+let ukupnoVreme = 0
 
-const dodajUCtn = () => {
+const testFun = (staradi) => {
   let unos = tiketInput.value
   let obrisi = 'Ticket #'
   let brojTiketa = unos.replace(obrisi, '')
-  vreme1 += +vremeInput.value
-  CnfList.innerHTML =
-    CnfList.innerHTML +
-    `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
-  CnfVreme.innerText = `Create new flight ukupno: ${vreme1} min`
+  vreme[staradi] += +vremeInput.value
+
+  switch (staradi) {
+    case 0:
+      CnfList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      CnfVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
+      break
+    case 1:
+      CelList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      CelVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
+      break
+    case 2:
+      CncList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      CncVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
+      break
+    case 3:
+      RolList.innerHTML += `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
+      RolVreme.innerText = `Changes existing ukupno: ${vreme[staradi]} min`
+      break
+  }
   tiketInput.value = ''
   vremeInput.value = ''
-}
-const dodajUCel = () => {
-  let unos = tiketInput.value
-  let obrisi = 'Ticket #'
-  let brojTiketa = unos.replace(obrisi, '')
-  vreme2 += +vremeInput.value
-  CelList.innerHTML =
-    CelList.innerHTML +
-    `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
-  CelVreme.innerText = `Changes existing ukupno: ${vreme2} min`
-  tiketInput.value = ''
-  vremeInput.value = ''
-}
-const dodajUCnc = () => {
-  let unos = tiketInput.value
-  let obrisi = 'Ticket #'
-  let brojTiketa = unos.replace(obrisi, '')
-  vreme3 += +vremeInput.value
-  CncList.innerHTML =
-    CncList.innerHTML +
-    `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
-  CncVreme.innerText = `Cancellation ukupno: ${vreme3} min`
-  tiketInput.value = ''
-  vremeInput.value = ''
-}
-const dodajURol = () => {
-  let unos = tiketInput.value
-  let obrisi = 'Ticket #'
-  let brojTiketa = unos.replace(obrisi, '')
-  vreme4 += +vremeInput.value
-  RolList.innerHTML =
-    RolList.innerHTML +
-    `<p>https://app.placements.io/tickets/#/${brojTiketa}</p>`
-  RolVreme.innerText = `Rollover ukupno: ${vreme4} min`
-  tiketInput.value = ''
-  vremeInput.value = ''
+
+  ukupnoVreme = (vreme[0] + vreme[1] + vreme[2] + vreme[3]) / 60
+  ukupnoSati.innerText = `Ukupno sati: ${ukupnoVreme.toFixed(2)}`
 }
 
 const obrisi = () => {
-  const provera = confirm("Jesi li siguran da zelis da obrises odradjene tikete?")
+  const provera = confirm(
+    'Jesi li siguran da zelis da obrises odradjene tikete?'
+  )
   CnfList.innerHTML = ''
   CelList.innerHTML = ''
   CncList.innerHTML = ''
@@ -77,11 +59,11 @@ const obrisi = () => {
   CelVreme.innerHTML = 'Changes existing ukupno:'
   CncVreme.innerHTML = 'Cancellation ukupno:'
   RolVreme.innerHTML = 'Rollover ukupno:'
+  ukupnoSati.innerText = ''
 }
 
-let ukupnoVreme = vreme1
-ukupnoSati.innerText = `Ukupno sati: ${ukupnoVreme}`
+const kopiraj = () => {
+  
+}
 
 //https://app.placements.io/tickets/#/75500
-
-
